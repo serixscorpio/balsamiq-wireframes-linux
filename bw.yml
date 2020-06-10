@@ -10,7 +10,7 @@ script:
             BALSAM_URL: https://builds.balsamiq.com/bwd
     files: 
         - bwwin_download_sh: https://raw.githubusercontent.com/balsamiq/balsamiq-wireframes-linux/master/download.sh
-        - app_link_sh: https://raw.githubusercontent.com/balsamiq/balsamiq-wireframes-linux/master/create_app_link.sh
+        - app_link_sh: https://raw.githubusercontent.com/balsamiq/balsamiq-wireframes-linux/master/create-app-link.sh
     require-binaries: curl
     game:
         prefix: $GAMEDIR
