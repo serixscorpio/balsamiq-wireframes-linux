@@ -1,0 +1,56 @@
+name: &name Balsamiq Wireframes
+game_slug: &game_slug balsamiq-wireframes
+version: installer
+slug: bwwin-installer
+runner: wine
+
+script:
+    system:
+        env:
+            BALSAM_URL: https://builds.balsamiq.com/bwd
+    files: 
+        - bwwin_download_sh: https://raw.githubusercontent.com/balsamiq/balsamiq-wireframes-linux/master/download.sh
+        - app_link_sh: https://raw.githubusercontent.com/balsamiq/balsamiq-wireframes-linux/master/create_app_link.sh
+    require-binaries: curl
+    game:
+        prefix: $GAMEDIR
+        exe: &exe $GAMEDIR/drive_c/Program Files/Balsamiq/Balsamiq Wireframes/BalsamiqWireframes.exe
+        arch: win64
+    wine:
+        dxvk: false
+        version: &wine_version lutris-5.7-x86_64
+    installer:
+    - task:
+        description: Creating Wine prefix
+        prefix: $GAMEDIR
+        arch: win64
+        name: create_prefix
+    - chmodx: bwwin_download_sh
+    - execute:
+        description: Downloading and renaming the installer
+        file: bwwin_download_sh
+        args: $CACHE/Balsamiq_Wireframes_Setup.exe
+        terminal: false
+    - task:
+        description: Setting Windows 10 mode for Wine
+        prefix: $GAMEDIR
+        arch: win64
+        key: Version
+        name: set_regedit
+        path: HKEY_CURRENT_USER\Software\Wine
+        value: win10
+    - task:
+        description: Launching the Setup in Silent Mode
+        arch: win64
+        executable: $CACHE/Balsamiq_Wireframes_Setup.exe
+        args: /ALLUSERS /VERYSILENT
+        name: wineexec
+        prefix: $GAMEDIR
+    - chmodx: app_link_sh
+    - execute:
+        file: app_link_sh
+        env:
+            LUTRIS_VER: *wine_version
+            GAME_SLUG: *game_slug
+            APPLICATION_NAME: *name
+            APP_EXE: *exe
