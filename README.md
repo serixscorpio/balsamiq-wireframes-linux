@@ -11,7 +11,7 @@ Instructions on how to run Balsamiq Wireframes on Linux, using Wine and Lutris.
 
 1. download `bw.yml` from this repository with `curl https://raw.githubusercontent.com/balsamiq/balsamiq-wireframes-linux/master/bw.yml > bw.yml`
 1. launch the installer with `lutris -i <full-path-to-bw.yml>/bw.yml` 
-1. follow the steps in the lutris wizard, and voila'!
+1. follow the steps in the Lutris wizard, and voila'!
 
 ### LAUNCHING BALSAMIQ WIREFRAMES
 
