@@ -25,6 +25,7 @@ script:
         prefix: $GAMEDIR
         arch: win64
         name: create_prefix
+        install_gecko: true
     - chmodx: bwwin_download_sh
     - execute:
         description: Downloading and renaming the installer
