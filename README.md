@@ -20,3 +20,5 @@ Simply launch the app from your application or desktop shortcut shortcut, or fro
 ### CURRENT LIMITATIONS
 
 At the moment the app cannot be used to edit projects hosted on Balsamiq Cloud. You'll have to use a browser instead.
+
+At the moment export pdf doesn't work if some UTF-8 fonts are present (like emojis and some asian fonts)
