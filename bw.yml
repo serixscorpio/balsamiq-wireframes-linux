@@ -41,6 +41,18 @@ script:
         path: HKEY_CURRENT_USER\Software\Wine
         value: win10
     - task:
+        arch: win64
+        app: dxvk160
+        description: Installing dxvk160
+        name: winetricks
+        prefix: $GAMEDIR
+    - task:
+        arch: win64
+        app: galliumnine
+        description: Installing galliumnine
+        name: winetricks
+        prefix: $GAMEDIR
+    - task:
         description: Launching the Setup in Silent Mode
         arch: win64
         executable: $CACHE/Balsamiq_Wireframes_Setup.exe
