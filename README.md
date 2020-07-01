@@ -9,8 +9,7 @@ Instructions on how to run Balsamiq Wireframes on Linux, using Wine and Lutris.
 
 ### INSTALLING BALSAMIQ WIREFRAMES
 
-1. download `bw.yml` from this repository with `curl https://raw.githubusercontent.com/balsamiq/balsamiq-wireframes-linux/master/bw.yml > bw.yml`
-1. launch the installer with `lutris -i <full-path-to-bw.yml>/bw.yml` 
+1. download and launch the installer with `wget https://raw.githubusercontent.com/balsamiq/balsamiq-wireframes-linux/master/bw.yml -O /tmp/bw.yml && lutris -i /tmp/bw.yml` 
 1. follow the steps in the Lutris wizard, and voila'!
 
 ### LAUNCHING BALSAMIQ WIREFRAMES
@@ -19,6 +18,7 @@ Simply launch the app from your application or desktop shortcut shortcut, or fro
 
 ### CURRENT LIMITATIONS
 
-At the moment the app cannot be used to edit projects hosted on Balsamiq Cloud. You'll have to use a browser instead.
+* At the moment the app cannot be used to edit projects hosted on Balsamiq Cloud. You'll have to use a browser instead.
+* At the moment export pdf doesn't work if some UTF-8 fonts are present (like emojis and some asian fonts)
 
-At the moment export pdf doesn't work if some UTF-8 fonts are present (like emojis and some asian fonts)
+If you manage to fix these issues before we do, PRs are welcome! :)
