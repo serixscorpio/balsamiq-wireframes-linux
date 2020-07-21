@@ -18,7 +18,7 @@ script:
         arch: win64
     wine:
         dxvk: false
-        version: &wine_version lutris-5.7-5-x86_64
+        version: &wine_version lutris-5.7-7-x86_64
     installer:
     - task:
         description: Creating Wine prefix
